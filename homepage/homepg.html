@@ -10,10 +10,51 @@
 </head>
 
 <body>
-	<h1>広告ファイル</h1>
-	<a href="./firstad/inspection.html">1個目</a>
-	<a href="./secondad/inspection.html">2個目</a>
-	<a href="./thirdad/inspection.html">3個目</a>
+	<script>
+		var title = document.createElement('h1');
+		document.body.appendChild(title);
+
+		var first_ad = document.createElement('a');
+		first_ad.href = "./firstad/inspection.html"
+		title.appendChild(first_ad);
+
+		var jump_firstad = document.createElement('p');
+		jump_firstad.innerHTML = "おすすめリスト広告";
+		first_ad.appendChild(jump_firstad);
+
+		var second_ad = document.createElement('a');
+		second_ad.href = "./secondad/inspection.html"
+		title.appendChild(second_ad);
+
+		var jump_secondad = document.createElement('p');
+		jump_secondad.innerHTML = "メッセ風広告";
+		second_ad.appendChild(jump_secondad);
+
+		var third_ad = document.createElement('a');
+		third_ad.href = "./thirdad/inspection.html"
+		title.appendChild(third_ad);
+
+		var jump_thirdad = document.createElement('p');
+		jump_thirdad.innerHTML = "パラパラ広告";
+		third_ad.appendChild(jump_thirdad);
+
+		var fourth_ad = document.createElement('a');
+		fourth_ad.href = "./fourthad/inspection.html"
+		title.appendChild(fourth_ad);
+
+		var jump_fourthad = document.createElement('p');
+		jump_fourthad.innerHTML = "派手広告";
+		fourth_ad.appendChild(jump_fourthad);
+
+		var fifth_ad = document.createElement('a');
+		fifth_ad.href = "./fifthad/inspection.html"
+		title.appendChild(fifth_ad);
+
+		var jump_fifthad = document.createElement('p');
+		jump_fifthad.innerHTML = "回転広告";
+		fifth_ad.appendChild(jump_fifthad);
+
+	</script>
 </body>
 
 </html>
