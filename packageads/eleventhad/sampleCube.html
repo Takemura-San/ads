@@ -165,19 +165,6 @@
 			},
 		];
 
-		var autoMove = function (modify, element) {
-			modify.animate(
-				[
-					{
-						transform: element,
-					}
-				], {
-				duration: 3000,
-				iterations: 1
-			}
-			);
-		}
-
 		document.body.style.width = "300";
 		document.body.style.height = "250";
 
@@ -223,28 +210,9 @@
 
 		for (let i = 0; i < 4; i++) {
 			var inputs = document.createElement('input');
+			inputs.className = 'tab-tfbb';
 			inputs.setAttribute('type', 'radio');
 			inputs.setAttribute('name', 'tabs');
-
-
-			switch (i) {
-				case (0):
-					inputs.id = 'tab-top';
-					break;
-
-				case (1):
-					inputs.id = 'tab-front';
-					break;
-
-				case (2):
-					inputs.id = 'tab-bottom';
-					break;
-
-				case (3):
-					inputs.id = 'tab-back';
-					break;
-
-			}
 
 			perspective_div.appendChild(inputs);
 		}
@@ -346,7 +314,7 @@
 					setTimeout(facetChanger, 6000);
 					classIndex++;
 					break;
-				//
+
 				case 4:
 					cube.style.transform = 'rotateX(0deg)';
 					setTimeout(facetChanger, 6000);
@@ -359,6 +327,8 @@
 			}
 		}
 		setTimeout(facetChanger, 1500);
+
+		var checked =
 
 	</script>
 </body>
