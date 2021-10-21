@@ -213,7 +213,7 @@
 			inputs.className = 'tab-tfbb';
 			inputs.setAttribute('type', 'radio');
 			inputs.setAttribute('name', 'tabs');
-
+	
 			perspective_div.appendChild(inputs);
 		}
 
@@ -327,8 +327,52 @@
 			}
 		}
 		setTimeout(facetChanger, 1500);
-
-		var checked =
+		
+		
+		var checked1 = document.getElementsByClassName('tab-tfbb').items(0);
+		var checked2 = document.getElementsByClassName('tab-tfbb').items(1);
+		var checked3 = document.getElementsByClassName('tab-tfbb').items(2);
+		var checked4 = document.getElementsByClassName('tab-tfbb').items(4);
+		
+		checked1.addEventListener(
+			"click",
+			() => {
+				checked1.style.tranform(rotateX(0deg));
+				
+			},
+			false
+		);
+		
+			checked2.addEventListener(
+			"click",
+			() => {
+				checked1.style.tranform(rotateX(90deg));
+				
+			},
+			false
+		);
+		
+			checked3.addEventListener(
+			"click",
+			() => {
+				checked1.style.tranform(rotateX(180deg));
+				
+			},
+			false
+		);
+		
+			checked4.addEventListener(
+			"click",
+			() => {
+				checked1.style.tranform(rotateX(270deg));
+				
+			},
+			false
+		);
+		
+		
+		
+		
 
 	</script>
 </body>
