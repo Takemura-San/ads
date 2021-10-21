@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<style>
+
+</style>
+
+<body>
+	<canvas id="cnv" width="800" height="600"></canvas>
+
+	<p>Created by Jérémy Heleine for <a href="http://www.sitepoint.com/">SitePoint</a></p>
+
+	<script>
+
+		//point constructor
+		var Vertex = function (x, y, z) {
+			this.x = parseFloat(x);
+			this.y = parseFloat(y);
+			this.z = parseFloat(z);
+		};
+		// 座標を格納するクラス
+
+		var A = new Vertex(10, 20, 0.5);
+		//頂点オブジェクト
+
+		var Cube = function (center, size) { //center, width(height?)
+			// Generate the vertices
+			var d = size / 2; //half the width(height?)
+
+			this.vertices = [
+				//x = center - radius, y = center - radius, z = center + radius
+				new Vertex(center.x - d, center.y - d, center.z + d), //0
+				new Vertex(center.x - d, center.y - d, center.z - d), //1
+				new Vertex(center.x + d, center.y - d, center.z - d), //2
+				new Vertex(center.x + d, center.y - d, center.z + d), //3
+				new Vertex(center.x + d, center.y + d, center.z + d), //4
+				new Vertex(center.x + d, center.y + d, center.z - d), //5
+				new Vertex(center.x - d, center.y + d, center.z - d), //6
+				new Vertex(center.x - d, center.y + d, center.z + d)  //7
+			];
+
+			// Generate the faces using vertices generated with array vertices
+			this.faces = [
+				[this.vertices[0], this.vertices[1], this.vertices[2], this.vertices[3]],
+				[this.vertices[3], this.vertices[2], this.vertices[5], this.vertices[4]],
+				[this.vertices[4], this.vertices[5], this.vertices[6], this.vertices[7]],
+				[this.vertices[7], this.vertices[6], this.vertices[1], this.vertices[0]],
+				[this.vertices[7], this.vertices[0], this.vertices[3], this.vertices[4]],
+				[this.vertices[1], this.vertices[6], this.vertices[5], this.vertices[2]]
+			];
+		};
+
+		var cube = new Cube(new Vertex(0, 0, 0), 200); //set coordinate 0,0,0 as center of cube, with size 200
+
+		for (var i = 0; i < 8; ++i) {
+			cube.vertices[i].x += 50;
+			cube.vertices[i].y += 20;
+			cube.vertices[i].z += 15;
+		} //move the cube +50 in x axis, +20 in y axis, and +15 in z axis
+
+		//renderer function
+		//objects = array that has elements of faces
+		function render(objects, ctx, dx, dy) {
+			// For each object
+			//n_obj = number of objects , iterate through 0 - number
+			//iterate through each object
+			for (var i = 0, n_obj = objects.length; i < n_obj; ++i) {
+				// For each face
+				// objects = array with listing of objects to render
+				//n_faces = number of elements inside each element of object
+				//iterate through each faces
+				for (var j = 0, n_faces = objects[i].faces.length; j < n_faces; ++j) {
+					// Current face
+					var face = objects[i].faces[j];
+					//face = [j]th face inside each object
+
+					// Draw the first vertex
+					var P = project(face[0]); //takes argument(face[0] = vertexes of first face)
+					ctx.beginPath(); //ctx = 線を書く起点？　//beginPath() = ctxを起点として線を二つ書く
+					ctx.moveTo(P.x + dx, -P.y + dy); //moveTo = change direction to...
+					//P.x(x of first face) + dx (x coordinate of center of the canvas)
+					//意味：canvasの真ん中座標を中心として、線がx方向・y方向どっちに進むか定義。
+
+					// Draw the other vertices
+					//１こ目のelementの面は上記で書いてるため、[1]から始める
+					for (var k = 1, n_vertices = face.length; k < n_vertices; ++k) {
+						P = project(face[k]);　//iterate through 面[1]〜面[最後の], convert to 2D coordinates
+						ctx.lineTo(P.x + dx, -P.y + dy);//iterate and move the line to each vertexes
+					}
+
+					// Close the path and draw the face
+					ctx.closePath(); //add straight line from current path to the start of the path(faces[0]?)
+					ctx.stroke(); //描画。今まではjust mad paths
+					ctx.fill(); //塗りつぶす
+				}
+			}
+		}
+
+		var Vertex2D = function (x, y) {
+			this.x = parseFloat(x);
+			this.y = parseFloat(y);
+		};
+
+
+		function project(M) {
+			return new Vertex2D(M.x, M.z);
+		} //converting 3D vertex to 2D by eliminating y(奥行き)
+
+
+	</script>
+</body>
+
+</html>

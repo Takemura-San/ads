@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	.banner-area {
+		width: 300px;
+		height: 250px;
+		position: relative;
+		overflow: hidden;
+		outline: #cfcfcf 1px solid;
+		outline-offset: -1px;
+	}
+
+	.area {
+		background: #fafafa;
+		width: 300px;
+		height: 250px;
+		position: fixed;
+		border: #cfcfcf 1px solid;
+	}
+
+	.circles {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+	}
+
+	.circles li {
+		position: absolute;
+		display: block;
+		list-style: none;
+		width: 20px;
+		height: 20px;
+		background: rgba(150, 150, 150, 0.2);
+		animation: animate 25s linear infinite;
+		bottom: -150px;
+	}
+
+	.circles li:nth-child(1) {
+		left: 25%;
+		width: 80px;
+		height: 80px;
+		animation-delay: 0s;
+	}
+
+	.circles li:nth-child(2) {
+		left: 10%;
+		width: 20px;
+		height: 20px;
+		animation-delay: 2s;
+		animation-duration: 12s;
+	}
+
+	.circles li:nth-child(3) {
+		left: 70%;
+		width: 20px;
+		height: 20px;
+		animation-delay: 4s;
+	}
+
+	.circles li:nth-child(4) {
+		left: 40%;
+		width: 60px;
+		height: 60px;
+		animation-delay: 0s;
+		animation-duration: 18s;
+	}
+
+	.circles li:nth-child(5) {
+		left: 65%;
+		width: 20px;
+		height: 20px;
+		animation-delay: 0s;
+	}
+
+	.circles li:nth-child(6) {
+		left: 75%;
+		width: 110px;
+		height: 110px;
+		animation-delay: 3s;
+	}
+
+	.circles li:nth-child(7) {
+		left: 35%;
+		width: 150px;
+		height: 150px;
+		animation-delay: 7s;
+	}
+
+	.circles li:nth-child(8) {
+		left: 50%;
+		width: 25px;
+		height: 25px;
+		animation-delay: 15s;
+		animation-duration: 45s;
+	}
+
+	.circles li:nth-child(9) {
+		left: 20%;
+		width: 15px;
+		height: 15px;
+		animation-delay: 2s;
+		animation-duration: 35s;
+	}
+
+	.circles li:nth-child(10) {
+		left: 85%;
+		width: 150px;
+		height: 150px;
+		animation-delay: 0s;
+		animation-duration: 11s;
+	}
+
+	@keyframes animate {
+		0% {
+			transform: translateY(0) rotate(0deg);
+			opacity: 1;
+			border-radius: 0;
+		}
+
+		100% {
+			transform: translateY(-1000px) rotate(720deg);
+			opacity: 0;
+			border-radius: 50%;
+		}
+	}
+
+	.prev {
+		background-color: #cfcfcf;
+		width: 60px;
+		height: 60px;
+		border-radius: 50%;
+		position: absolute;
+		left: -30px;
+		top: 80px;
+		cursor: pointer;
+		transition: all 0.3s;
+		z-index: 10;
+		display: none;
+	}
+
+	.next {
+		background-color: #cfcfcf;
+		width: 60px;
+		height: 60px;
+		border-radius: 50%;
+		position: absolute;
+		right: -30px;
+		top: 80px;
+		cursor: pointer;
+		transition: all 0.3s;
+		z-index: 10;
+		display: block;
+	}
+
+	.prev::after {
+		content: "";
+		display: block;
+		width: 0;
+		height: 0;
+		border-left: 10px solid #fff;
+		border-top: 10px solid transparent;
+		border-bottom: 10px solid transparent;
+		transform: rotate(-180deg);
+		position: absolute;
+		top: 19px;
+		left: 36px;
+	}
+
+	.next::after {
+		content: "";
+		display: block;
+		width: 0;
+		height: 0;
+		border-left: 10px solid #fff;
+		border-top: 10px solid transparent;
+		border-bottom: 10px solid transparent;
+		position: absolute;
+		top: 19px;
+		right: 36px;
+	}
+
+	.prev:hover {
+		opacity: 0.6;
+		outline: #000 1px solid;
+		outline-offset: -1px;
+	}
+
+	.next:hover {
+		opacity: 0.6;
+		outline: #000 1px solid;
+		outline-offset: -1px;
+	}
+
+	.card {
+		width: 300px;
+		height: 250px;
+	}
+
+	.card:hover p {
+		text-decoration: underline;
+	}
+
+	.image-area {
+		height: 190px;
+		width: 300px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		overflow: hidden;
+		margin-top: 6px;
+	}
+
+	img {
+		margin-top: 5px;
+		height: 185px;
+		width: 130px;
+		object-fit: cover;
+	}
+
+	.text-area {
+		height: 60px;
+		width: 300px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.text-area p {
+		margin: 10px;
+		font-size: 13px;
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+		color: #474747;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	.slider {
+		display: flex;
+		width: 1200px;
+	}
+
+	.slide1 {
+		transform: translateX(0);
+		transition: all 0.5s;
+	}
+
+	.slide2 {
+		transform: translateX(-300px);
+		transition: all 0.5s;
+	}
+
+	.slide2-2 {
+		transform: translateX(-300px);
+		transition: all 0.5s;
+	}
+
+	.slide3 {
+		transform: translateX(-600px);
+		transition: all 0.5s;
+	}
+
+	.slide3-2 {
+		transform: translateX(-600px);
+		transition: all 0.5s;
+	}
+
+	.slide4 {
+		transform: translateX(-900px);
+		transition: all 0.5s;
+	}
+</style>
+
+<body>
+	<div class="banner-area">
+		<div class="area">
+			<ul class="circles">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		<div id="prev" class="prev"></div>
+		<div id="next" class="next"></div>
+		<div class="wrapper">
+			<div id="slider" class="slider slide1">
+				<a target="_blank" rel="noopener noreferrer" href="{@ninja_ad_items[0].url}">
+					<div class="card">
+						<div class="image-area">
+							<img src="{@ninja_ad_items[0].image}">
+						</div>
+						<div class="text-area">
+							<p>{@ninja_ad_items[0].title}</p>
+						</div>
+					</div>
+				</a>
+				<a target="_blank" rel="noopener noreferrer" href="{@ninja_ad_items[1].url}">
+					<div class="card">
+						<div class="image-area">
+							<img src="{@ninja_ad_items[1].image}">
+						</div>
+						<div class="text-area">
+							<p>{@ninja_ad_items[1].title}</p>
+						</div>
+					</div>
+				</a>
+				<a target="_blank" rel="noopener noreferrer" href="{@ninja_ad_items[2].url}">
+					<div class="card">
+						<div class="image-area">
+							<img src="{@ninja_ad_items[2].image}">
+						</div>
+						<div class="text-area">
+							<p>やっほう</p>
+						</div>
+					</div>
+				</a>
+				<a target="_blank" rel="noopener noreferrer" href="{@ninja_ad_items[3].url}">
+					<div class="card">
+						<div class="image-area">
+							<img src="{@ninja_ad_items[3].image}">
+						</div>
+						<div class="text-area">
+							<p>あああああああああああああああああああああああああああああああああああ</p>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+	<script>
+		var slider = document.getElementById('slider');
+		var prev = document.getElementById('prev');
+		var next = document.getElementById('next');
+		next.addEventListener('click', nextClick);
+		prev.addEventListener('click', prevClick);
+		function nextClick() {
+			if (slider.classList.contains('slide1') === true) {
+				slider.classList.remove('slide1');
+				slider.classList.add('slide2');
+				prev.style.display = "block";
+				count = 0;
+			} else if (slider.classList.contains('slide2') === true) {
+				slider.classList.remove('slide2');
+				slider.classList.add('slide3');
+				count = 0;
+			} else if (slider.classList.contains('slide3') === true) {
+				slider.classList.remove('slide3');
+				slider.classList.add('slide4');
+				next.style.display = "none";
+				count = 0;
+			} else {
+				;
+			}
+		}
+		function prevClick() {
+			if (slider.classList.contains('slide1') === true) {
+				;
+			} else if (slider.classList.contains('slide2') === true) {
+				slider.classList.remove('slide2');
+				slider.classList.add('slide1');
+				prev.style.display = "none";
+				count = 0;
+			} else if (slider.classList.contains('slide3') === true) {
+				slider.classList.remove('slide3');
+				slider.classList.add('slide2');
+				count = 0;
+			} else {
+				slider.classList.remove('slide4');
+				slider.classList.add('slide3');
+				next.style.display = "block";
+				count = 0;
+			}
+		}
+		function autoSlide() {
+			if (slider.classList.contains('slide1') === true) {
+				slider.classList.remove('slide1');
+				slider.classList.add('slide2');
+				prev.style.display = "block";
+			} else if (slider.classList.contains('slide2') === true) {
+				slider.classList.remove('slide2');
+				slider.classList.add('slide3');
+			} else if (slider.classList.contains('slide3') === true) {
+				slider.classList.remove('slide3');
+				slider.classList.add('slide4');
+				next.style.display = "none";
+			} else if (slider.classList.contains('slide4') === true) {
+				slider.classList.remove('slide4');
+				slider.classList.add('slide3-2');
+				next.style.display = "block";
+			} else if (slider.classList.contains('slide3-2') === true) {
+				slider.classList.remove('slide3-2');
+				slider.classList.add('slide2-2');
+			} else {
+				slider.classList.remove('slide2-2');
+				slider.classList.add('slide1');
+				prev.style.display = "none";
+			}
+		}
+		var count = 0;
+		var timer = setInterval(() => {
+			if (count > 6) {
+				count = 0;
+				autoSlide();
+			}
+			count++;
+			console.log(count);
+		}, 1000);
+	</script>
+</body>
+
+</html>

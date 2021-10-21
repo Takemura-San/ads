@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.perspective {
+			perspective: 76em;
+			perspective-origin: 50% 50px;
+			width: 299px;
+			margin: 0 auto;
+			font-family: "Roboto", sans-serif;
+			font-weight: 100;
+			color: #fff;
+			text-align: center;
+		}
+
+		input {
+			display: none;
+		}
+
+		.tab {
+			position: absolute;
+			width: 30px;
+			height: 62.5px;
+			background: pink;
+			right: 0;
+			line-height: 70px;
+			font-weight: 300;
+		}
+
+		.tab:nth-child(1) {
+			top: 0px;
+			background: #06D6A0;
+		}
+
+		.tab:nth-child(2) {
+			top: 62.5px;
+			background: #1B9AAA;
+		}
+
+		.tab:nth-child(3) {
+			top: 125px;
+			background: #EF476F;
+		}
+
+		.tab:nth-child(4) {
+			top: 187.5px;
+			background: #8c00ff;
+		}
+
+		.cube {
+			position: relative;
+			width: 250px;
+			height: 230px;
+			transform-origin: 0 100px;
+			transform-style: preserve-3d;
+			transition: transform 0.5s ease-in;
+		}
+
+		.tab-content {
+			width: 255px;
+			height: 230px;
+			position: absolute;
+		}
+
+		.tab-content h1 {
+			font-size: 25px;
+			margin: 75px 0 10px;
+			font-weight: 300;
+		}
+
+		.tab-content p {
+			font-size: 12px;
+		}
+
+		.tab-content:nth-child(2) {
+			transform: translateZ(96px) translateY(5px) rotateX(0deg);
+			background: #1B9AAA;
+		}
+
+		.tab-content:nth-child(1) {
+			transform: rotateX(90deg) translateY(-96px) translateZ(-5px);
+			transform-origin: top left;
+			background: #06D6A0;
+		}
+
+		.tab-content:nth-child(3) {
+			transform: rotateX(-90deg) translateY(96px) translateZ(-22px);
+			bottom: -30px;
+			transform-origin: 100px 192px 1px;
+			background: #EF476F;
+		}
+
+		.tab-content:nth-child(4) {
+			transform: rotateX(180deg) translateY(222px) translateZ(78.5px);
+			transform-origin: 97px 209px -16px;
+			background: #8c00ff;
+		}
+
+		#tab-top:checked~.cube {
+			transform: rotateX(-90deg);
+		}
+
+		#tab-front:checked~.cube {
+			transform: rotateX(0deg);
+		}
+
+		#tab-bottom:checked~.cube {
+			transform: rotateX(90deg);
+		}
+
+		#tab-back:checked~.cube {
+			transform: rotateX(180deg);
+		}
+	</style>
+</head>
+
+<body>
+	<script>
+
+		var ninja_ad_items = [
+			{
+				image: "package.jpeg",
+				url: "https://book.dmm.com/detail/b900gkds03297/?dmmref=gTop_Deals&i3_ref=recommend&i3_ord=3",
+				title: "はじめの一歩",
+				description: "ひたむき少年、一歩（いっぽ）登場！！ 「強いって、一体どんな気持ちですか？」\
+				 ドジでいじめられっ子の高校生、幕之内（まくのうち）一歩。ボクサー・鷹村（たかむら）との出会いによって、拳（こぶし）にひそむダイナマイトパンチを呼び起こした！ \
+				 プロボクサーへの夢を抱いた一歩は、鴨川（かもがわ）ジムの入門テストに挑戦して……！？ 感動の大ヒット作、ボクシング巨編！！",
+				actress_name: "山田花子",
+
+			},
+			{
+				image: "package1.jpeg",
+				url: "https://book.dmm.com/detail/b900okds03240/?dmmref=gTop_Deals&i3_ref=recommend&i3_ord=2",
+				title: "転生したらスライムだった件 （1）",
+				description: "WEBで記録的なPVを集めた異世界転生モノの名作を、原作者完全監修でコミカライズ！\n \
+						巻末には原作者書き下ろしの短編小説を収録した、ファン必携の単行本いよいよ発売！",
+				actress_name: "山田花子",
+			},
+			{
+				image: "package2.jpeg",
+				url: "https://book.dmm.com/detail/b950ushes09021/?dmmref=gTop_Free&i3_ref=recommend&i3_ord=3",
+				title: "阿波連さんははかれない【期間限定無料】 1",
+				description: "※2021年8月17日までの期間限定無料お試し版です。2021年8月18日以降はご利用できなくなります。\
+				【ジャンプ＋連載中の大人気 低燃費系コメディ！ 『阿波連さんははかれない』TVアニメ化決定記念 大特集！】「小さくて」、「物静か」な阿波連れいなさん。\
+				隣の席に座るライドウくんは、そんな阿波連さんに距離を感じていた。ある日、阿波連さんが落とした消しゴムをライドウくんが拾ったことで、今度は予想外の急接近！？ \n \
+				「遠すぎたり」「近すぎたり」予測不能な阿波連さん。色んな意味で、『はかれない』青春コメディ第1巻！！",
+				actress_name: "山田花子",
+			},
+			{
+				image: "package3.jpeg",
+				url: "https://book.dmm.com/detail/b163aijt204536/?dmmref=gTop_Free&i3_ref=recommend&i3_ord=2",
+				title: "Fate/Grand Order -Epic of Remnant- 亜種特異点IV 禁忌降臨庭園 セイレム 異端なるセイレム 連載版 （1）",
+				description: "カルデアの面々による尽力の結果、魔術王を名乗った者の人理焼却計画は辛くも水際で食い止められ、世界の運命は再び息を吹き返したかに見えた。\
+				しかし、突如として「これまでの特異点と同レベル」の特異点が、近現代のもとに観測される。\
+				かつて未来を切り開いた一人のマスターは、呪われた地「セイレム」に出現した「亜種特異点」を鎮めるべく、再びレイシフトへと身を投じる。\
+				大人気スマホゲーム「Fate/Grand Order」のメインシナリオ第1.5部\
+				「Fate/Grand Order -Epic of Remnant- 亜種特異点IV 禁忌降臨庭園 セイレム 異端なるセイレム」がついにコミカライズ！！ \
+				作画を担当するのは「シルシア=コード」の大森 葵先生！！ 主人公たちはセイレムで起こる数々の惨劇を回避することができるのか――！？ \
+				※本作は月刊ComicREX2019年3月号の雑誌掲載時の内容になります。ページ数は実際と異なる場合がございます。漫画内の告知等は過去のものとなりますので、ご注意ください。",
+				actress_name: "山田花子",
+			},
+		];
+
+		var autoMove = function (modify, element) {
+			modify.animate(
+				[
+					{
+						transform: element,
+					}
+				], {
+				duration: 3000,
+				iterations: 1
+			}
+			);
+		}
+
+		document.body.style.width = "300";
+		document.body.style.height = "250";
+
+		var adArea_div = document.createElement('div');
+		adArea_div.style.position = "absolute";
+		adArea_div.style.width = "300px";
+		adArea_div.style.height = "250px";
+		adArea_div.style.boxSizing = "content-box";
+		adArea_div.style.margin = "0 ";
+		adArea_div.style.overflow = "hidden";
+		adArea_div.style.border = "1px solid rgb(170, 169, 169)";
+		document.body.appendChild(adArea_div);
+
+		var perspective_div = document.createElement('div');
+		perspective_div.className = 'perspective';
+		adArea_div.appendChild(perspective_div);
+
+		for (let i = 0; i < 4; i++) {
+			var label = document.createElement('label');
+			label.className = 'tab';
+
+			switch (i) {
+				case 0:
+					label.htmlFor = 'tab-top';
+					break;
+
+				case 1:
+					label.htmlFor = 'tab-front';
+					break;
+
+				case 2:
+					label.htmlFor = 'tab-bottom';
+					break;
+
+				case 3:
+					label.htmlFor = 'tab-back';
+					break;
+
+			}
+
+			perspective_div.appendChild(label);
+		}
+
+		for (let i = 0; i < 4; i++) {
+			var inputs = document.createElement('input');
+			inputs.setAttribute('type', 'radio');
+			inputs.setAttribute('name', 'tabs');
+
+
+			switch (i) {
+				case (0):
+					inputs.id = 'tab-top';
+					break;
+
+				case (1):
+					inputs.id = 'tab-front';
+					break;
+
+				case (2):
+					inputs.id = 'tab-bottom';
+					break;
+
+				case (3):
+					inputs.id = 'tab-back';
+					break;
+
+			}
+
+			perspective_div.appendChild(inputs);
+		}
+
+		var cube_div = document.createElement('div');
+		cube_div.className = 'cube';
+		perspective_div.appendChild(cube_div);
+
+		ninja_ad_items.slice(0, 4).forEach((item) => {
+
+			var tabContent_div = document.createElement('div');
+			tabContent_div.className = 'tab-content';
+			cube_div.appendChild(tabContent_div);
+
+			var jump_a = document.createElement('a');
+			jump_a.target = '_blank';
+			jump_a.href = item.url;
+			tabContent_div.appendChild(jump_a);
+
+			var image = document.createElement('img');
+			image.style.position = 'relative';
+			image.style.height = '180px';
+			image.style.top = '5px';
+			image.style.right = '10px';
+			image.style.left = '10px';
+			image.src = item.image;
+			jump_a.appendChild(image);
+
+			var title_div = document.createElement('div');
+			title_div.className = 'textArea';
+			title_div.style.position = 'relative';
+			title_div.style.overflow = 'hidden';
+			title_div.style.marginTop = '0px';
+			title_div.style.marginRight = '0px';
+			title_div.style.marginBottom = '0px';
+			title_div.style.marginLeft = '0px';
+			title_div.style.width = '210px';
+			title_div.style.height = '35px';
+			title_div.style.right = '-33px';
+			title_div.style.left = '33px';
+			jump_a.appendChild(title_div);
+
+			var title = document.createElement('p');
+			title.className = 'text';
+			title.innerHTML = item.title;
+			title.style.position = 'relative';
+			title.style.marginTop = '0px';
+			title.style.marginRight = '0px';
+			title.style.marginBottom = '0px';
+			title.style.marginLeft = '0px';
+			title.style.color = "white";
+			title.style.textAlign = "center";
+			title.style.verticalAlign = "center";
+			title.style.display = "-webkit - box";
+			title.style.WebkitLineClamp = "2";
+			title.style.WebkitBoxOrient = "vertical";
+			title.style.overflow = "hidden";
+			title.style.textDecoration = 'none';
+			title_div.appendChild(title);
+
+
+		})
+		function chk(i) {
+			var textElement = document.getElementsByClassName('text').item(i);
+			var textArea = document.getElementsByClassName('textArea').item(i);
+			var height = getComputedStyle(textElement).height;
+
+			if (height == '18px') {
+				textElement.style.bottom = '-6.5px';
+			}
+			else {
+				textElement.style.bottom = '1px';
+				textElement.style.height = '40px';
+			}
+
+		}
+		chk(0);
+		chk(1);
+		chk(2);
+		chk(3);
+		let classIndex = 1;
+		var cube = document.getElementsByClassName('cube').item(0);
+		const facetChanger = () => {
+			switch (classIndex) {
+				case 1:
+					cube.style.transform = 'rotateX(90deg)';
+					setTimeout(facetChanger, 6000);
+					classIndex++;
+					break;
+
+				case 2:
+					cube.style.transform = 'rotateX(180deg)';
+					setTimeout(facetChanger, 6000);
+					classIndex++;
+					break;
+
+				case 3:
+					cube.style.transform = 'rotateX(270deg)';
+					setTimeout(facetChanger, 6000);
+					classIndex++;
+					break;
+				//
+				case 4:
+					cube.style.transform = 'rotateX(0deg)';
+					setTimeout(facetChanger, 6000);
+					classIndex++;
+					break;
+
+			}
+			if (classIndex > 4) {
+				classIndex = 1;
+			}
+		}
+		setTimeout(facetChanger, 1500);
+
+	</script>
+</body>
+
+</html>
