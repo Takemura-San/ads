@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    display: flex;
+  }
+
+  .banner-area1 {
+    width: 300px;
+    height: 250px;
+    background-color: #cfcfcf;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .banner-area2 {
+    width: 300px;
+    height: 250px;
+    background-color: #828282;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .img1 {
+    width: 80px;
+    height: 128px;
+  }
+
+  /* カットしたい分だけ短くしてobject-fit: cover;を追加 */
+  .img2 {
+    width: 80px;
+    height: 115px;
+    object-fit: cover;
+  }
+</style>
+<body>
+  <div class="banner-area1">
+    <img class="img1" src="3000830.jpeg">
+  </div>
+  <div class="banner-area2">
+    <img class="img2" src="3000830.jpeg">
+  </div>
+</body>
+</html>

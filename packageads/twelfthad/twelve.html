@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<title>snowPowder</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+
+		}
+	</style>
+</head>
+
+<body>
+	<svg id="text" xmlns="http://www.w3.org/2000/svg" width="1.66667in" height="1.66667in" viewBox="0 0 500 500">
+		<path id="Selection" fill="#FFB482" stroke="white" stroke-width="1" d="M 314.00,293.00
+           C 314.00,293.00 322.80,245.00 322.80,245.00
+             324.51,236.45 323.71,231.10 334.00,230.00
+             334.00,230.00 320.00,295.00 320.00,295.00
+             323.51,292.26 323.66,291.69 328.00,293.00
+             328.00,293.00 336.80,245.00 336.80,245.00
+             338.51,236.45 337.71,231.10 348.00,230.00
+             348.00,230.00 334.00,295.00 334.00,295.00
+             334.00,295.00 341.00,292.00 341.00,292.00
+             341.03,283.38 343.04,276.77 351.00,272.01
+             357.98,267.83 367.33,270.29 368.78,279.00
+             369.97,286.20 365.94,295.09 359.98,299.15
+             353.76,303.40 345.77,303.12 342.00,296.00
+             342.00,296.00 340.00,296.00 340.00,296.00
+             336.01,302.99 329.13,304.52 328.00,295.00
+             323.32,300.25 315.43,307.02 314.00,295.00
+             309.32,300.25 301.43,307.02 300.00,295.00
+             298.12,296.82 296.27,298.80 294.00,300.15
+             287.76,303.85 281.49,301.81 281.04,294.00
+             280.65,287.12 282.78,281.24 287.33,276.04
+             292.30,270.35 295.10,270.29 302.00,270.08
+             305.78,269.96 308.38,268.84 312.00,268.00
+             312.00,268.00 306.00,295.00 306.00,295.00
+             309.49,292.19 309.69,291.42 314.00,293.00 Z
+           M 47.00,276.00
+           C 50.24,275.97 60.08,275.60 62.27,273.40
+             64.09,271.57 64.87,265.65 65.40,263.00
+             65.40,263.00 69.00,246.00 69.00,246.00
+             69.57,243.22 70.17,238.59 71.85,236.39
+             73.80,233.85 77.06,232.84 80.00,232.00
+             80.00,232.00 66.00,301.00 66.00,301.00
+             66.00,301.00 59.00,301.00 59.00,301.00
+             56.55,292.44 51.16,286.13 44.00,281.00
+             40.62,292.59 29.99,301.93 18.00,303.85
+             18.00,303.85 4.00,303.85 4.00,303.85
+             4.00,303.85 5.00,296.00 5.00,296.00
+             9.57,296.38 14.82,298.32 19.00,297.46
+             33.68,294.43 39.77,274.66 43.12,262.00
+             48.35,242.16 45.33,238.34 57.00,235.00
+             56.90,246.36 51.25,265.30 47.00,276.00 Z
+           M 254.00,276.00
+           C 257.24,275.97 267.08,275.60 269.27,273.40
+             271.09,271.57 271.87,265.65 272.40,263.00
+             272.40,263.00 276.00,246.00 276.00,246.00
+             276.57,243.22 277.17,238.59 278.85,236.39
+             280.80,233.85 284.06,232.84 287.00,232.00
+             287.00,232.00 273.00,301.00 273.00,301.00
+             273.00,301.00 266.00,301.00 266.00,301.00
+             263.55,292.44 258.16,286.13 251.00,281.00
+             246.01,298.08 226.90,307.80 210.00,303.00
+             210.00,303.00 212.00,296.00 212.00,296.00
+             216.57,296.38 221.82,298.32 226.00,297.46
+             240.68,294.43 246.77,274.66 250.12,262.00
+             255.35,242.16 252.33,238.34 264.00,235.00
+             263.90,246.36 258.25,265.30 254.00,276.00 Z
+           M 93.00,295.00
+           C 91.12,296.82 89.27,298.80 87.00,300.15
+             80.76,303.85 74.49,301.81 74.04,294.00
+             73.65,287.12 75.78,281.24 80.33,276.04
+             85.30,270.35 88.10,270.29 95.00,270.08
+             98.78,269.96 101.38,268.84 105.00,268.00
+             105.00,268.00 99.00,295.00 99.00,295.00
+             102.49,292.19 102.69,291.42 107.00,293.00
+             111.71,275.24 108.11,271.23 120.00,269.00
+             120.00,269.00 119.00,274.00 119.00,274.00
+             128.44,267.34 136.52,269.22 135.96,282.00
+             135.64,289.32 131.05,298.13 124.00,300.99
+             119.71,302.74 116.18,301.16 113.56,303.60
+             107.56,309.20 114.27,319.57 102.00,320.00
+             102.00,320.00 107.00,295.00 107.00,295.00
+             102.32,300.25 94.43,307.02 93.00,295.00 Z
+           M 395.00,293.00
+           C 396.41,290.07 399.67,284.70 400.35,282.00
+             401.91,275.77 395.54,271.11 406.00,268.00
+             409.98,278.62 406.99,283.97 401.00,293.00
+             399.00,296.01 393.27,304.75 388.85,300.39
+             387.73,299.28 386.61,295.60 386.00,294.00
+             384.38,297.01 380.60,303.22 376.30,300.92
+             373.17,299.25 373.12,293.10 372.72,290.00
+             371.53,280.85 367.13,271.27 379.00,269.00
+             379.00,276.60 377.79,286.08 381.00,293.00
+             386.20,282.20 386.28,284.68 384.00,272.00
+             384.00,272.00 392.00,269.00 392.00,269.00
+             392.02,274.75 392.54,288.32 395.00,293.00 Z
+           M 133.00,320.00
+           C 133.00,320.00 139.40,287.00 139.40,287.00
+             139.40,287.00 142.95,272.64 142.95,272.64
+             142.95,272.64 151.00,269.00 151.00,269.00
+             151.00,269.00 150.00,274.00 150.00,274.00
+             159.44,267.34 167.52,269.22 166.96,282.00
+             166.64,289.32 162.05,298.13 155.00,300.99
+             150.71,302.74 147.18,301.16 144.56,303.60
+             138.56,309.20 145.27,319.57 133.00,320.00 Z
+           M 182.00,301.00
+           C 180.35,301.40 178.72,301.86 177.00,301.85
+             167.17,301.78 170.01,289.20 171.20,283.00
+             171.72,280.28 172.29,274.66 173.90,272.64
+             175.83,270.23 179.15,269.54 182.00,269.00
+             182.00,269.00 176.00,296.00 176.00,296.00
+             189.48,292.04 184.86,278.11 189.73,272.50
+             191.54,270.42 194.47,269.69 197.00,269.00
+             197.00,269.00 190.37,299.00 190.37,299.00
+             188.76,305.43 187.86,311.00 182.90,315.89
+             179.17,319.57 176.08,320.25 171.00,319.96
+             168.44,319.81 164.68,319.29 164.82,315.89
+             164.89,314.13 166.15,312.46 167.00,311.00
+             169.09,311.86 172.90,314.11 174.96,313.84
+             179.99,313.16 181.63,305.07 182.00,301.00 Z
+           M 457.00,293.00
+           C 457.17,289.20 459.19,274.32 461.57,271.97
+             463.52,270.04 466.43,269.48 469.00,269.00
+             469.00,269.00 467.00,277.00 467.00,277.00
+             468.50,275.54 470.33,273.65 472.00,272.43
+             476.62,269.07 483.06,269.25 483.82,276.00
+             484.24,279.82 480.72,289.87 480.00,295.00
+             480.00,295.00 486.00,291.00 486.00,291.00
+             489.75,299.39 479.21,303.65 475.87,300.26
+             471.80,296.41 475.57,282.21 475.87,277.00
+             471.13,280.57 469.05,283.64 466.37,289.00
+             461.81,298.11 464.00,301.14 455.00,302.00
+             455.00,302.00 455.00,293.00 455.00,293.00
+             451.81,299.69 443.12,305.11 436.11,300.26
+             433.46,298.44 432.37,295.76 431.00,293.00
+             429.59,295.95 428.74,297.38 425.98,299.35
+             424.15,300.66 422.23,301.47 420.00,301.79
+             405.39,303.88 404.12,284.40 415.04,274.11
+             417.90,271.41 421.90,269.03 425.94,270.60
+             430.44,272.35 430.45,277.26 428.55,280.99
+             425.91,286.14 420.45,288.96 415.00,290.00
+             419.10,297.34 422.33,296.13 427.00,290.00
+             427.00,290.00 432.00,292.00 432.00,292.00
+             432.01,288.23 431.82,285.58 433.36,282.00
+             435.82,276.31 446.22,264.92 452.40,272.31
+             457.28,278.15 449.66,287.98 439.00,290.00
+             443.10,297.34 446.33,296.13 451.00,290.00
+             451.00,290.00 457.00,293.00 457.00,293.00 Z
+           M 119.00,274.00
+           C 119.00,274.00 118.00,274.00 118.00,274.00
+             118.00,274.00 119.00,275.00 119.00,275.00
+             119.00,275.00 119.00,274.00 119.00,274.00 Z
+           M 150.00,274.00
+           C 150.00,274.00 149.00,274.00 149.00,274.00
+             149.00,274.00 150.00,275.00 150.00,275.00
+             150.00,275.00 150.00,274.00 150.00,274.00 Z
+           M 82.00,296.00
+           C 88.43,294.11 91.34,289.09 93.41,283.00
+             94.06,281.24 95.28,277.44 93.41,276.08
+             91.03,274.43 87.79,277.41 86.39,279.06
+             82.53,283.60 80.87,290.24 82.00,296.00 Z
+           M 289.00,296.00
+           C 295.43,294.11 298.34,289.09 300.41,283.00
+             301.06,281.24 302.28,277.44 300.41,276.08
+             298.03,274.43 294.79,277.41 293.39,279.06
+             289.53,283.60 287.87,290.24 289.00,296.00 Z
+           M 356.93,275.56
+           C 351.36,277.72 348.81,284.29 348.34,290.00
+             348.10,292.95 349.12,297.18 353.03,296.26
+             359.20,294.80 365.28,276.51 356.93,275.56 Z
+           M 424.00,275.00
+           C 418.95,277.45 417.56,279.72 416.00,285.00
+             420.59,281.63 421.66,280.13 424.00,275.00 Z
+           M 448.00,275.00
+           C 442.95,277.45 441.56,279.72 440.00,285.00
+             444.59,281.63 445.66,280.13 448.00,275.00 Z
+           M 128.00,276.00
+           C 118.95,277.50 116.28,288.36 114.00,296.00
+             125.63,300.70 127.98,284.01 128.00,276.00 Z
+           M 159.00,276.00
+           C 149.95,277.50 147.28,288.36 145.00,296.00
+             156.63,300.70 158.98,284.01 159.00,276.00 Z
+           M 467.00,278.00
+           C 467.00,278.00 466.00,278.00 466.00,278.00
+             466.00,278.00 467.00,279.00 467.00,279.00
+             467.00,279.00 467.00,278.00 467.00,278.00 Z
+           M 62.00,280.00
+           C 62.00,280.00 54.00,280.00 54.00,280.00
+             55.99,284.16 56.84,285.01 61.00,287.00
+             61.00,287.00 62.00,280.00 62.00,280.00 Z
+           M 269.00,280.00
+           C 269.00,280.00 261.00,280.00 261.00,280.00
+             262.99,284.16 263.84,285.01 268.00,287.00
+             268.00,287.00 269.00,280.00 269.00,280.00 Z" />
+	</svg>
+	<script>
+		function unescapeHTML(str) {
+			var div = document.createElement("div");
+			div.innerHTML = str
+				.replace(/</g, "&lt;")
+				.replace(/>/g, "&gt;")
+				.replace(/ /g, "&nbsp;")
+				.replace(/\r/g, "&#13;")
+				.replace(/\n/g, "&#10;");
+			return div.textContent || div.innerText;
+		}
+
+		var ninja_ad_items = [
+			{
+				image: "package.jpeg",
+				url: "https://book.dmm.com/detail/b900gkds03297/?dmmref=gTop_Deals&i3_ref=recommend&i3_ord=3",
+				title: "はじめの一歩",
+				description: "ひたむき少年、一歩（いっぽ）登場！！ 「強いって、一体どんな気持ちですか？」\
+				 ドジでいじめられっ子の高校生、幕之内（まくのうち）一歩。ボクサー・鷹村（たかむら）との出会いによって、拳（こぶし）にひそむダイナマイトパンチを呼び起こした！ \
+				 プロボクサーへの夢を抱いた一歩は、鴨川（かもがわ）ジムの入門テストに挑戦して……！？ 感動の大ヒット作、ボクシング巨編！！",
+				actress_name: "山田花子ポロポロ",
+
+			},
+			{
+				image: "package1.jpeg",
+				url: "https://book.dmm.com/detail/b900okds03240/?dmmref=gTop_Deals&i3_ref=recommend&i3_ord=2",
+				title: "転生したらスライムだった件 （1）",
+				description: "WEBで記録的なPVを集めた異世界転生モノの名作を、原作者完全監修でコミカライズ！\n \
+						巻末には原作者書き下ろしの短編小説を収録した、ファン必携の単行本いよいよ発売！",
+				actress_name: "山田花子だあああああ",
+			},
+			{
+				image: "package2.jpeg",
+				url: "https://book.dmm.com/detail/b950ushes09021/?dmmref=gTop_Free&i3_ref=recommend&i3_ord=3",
+				title: "阿波連さんははかれない【期間限定無料】 1",
+				description: "※2021年8月17日までの期間限定無料お試し版です。2021年8月18日以降はご利用できなくなります。\
+				【ジャンプ＋連載中の大人気 低燃費系コメディ！ 『阿波連さんははかれない』TVアニメ化決定記念 大特集！】「小さくて」、「物静か」な阿波連れいなさん。\
+				隣の席に座るライドウくんは、そんな阿波連さんに距離を感じていた。ある日、阿波連さんが落とした消しゴムをライドウくんが拾ったことで、今度は予想外の急接近！？ \n \
+				「遠すぎたり」「近すぎたり」予測不能な阿波連さん。色んな意味で、『はかれない』青春コメディ第1巻！！",
+				actress_name: "山田花子だよだよ",
+			},
+			{
+				image: "package.jpeg",
+				url: "https://book.dmm.com/detail/b163aijt204536/?dmmref=gTop_Free&i3_ref=recommend&i3_ord=2",
+				title: "Fate/Grand Order -Epic of Remnant- 亜種特異点IV 禁忌降臨庭園 セイレム 異端なるセイレム 連載版 （1）",
+				description: "カルデアの面々による尽力の結果、魔術王を名乗った者の人理焼却計画は辛くも水際で食い止められ、世界の運命は再び息を吹き返したかに見えた。\
+				しかし、突如として「これまでの特異点と同レベル」の特異点が、近現代のもとに観測される。\
+				かつて未来を切り開いた一人のマスターは、呪われた地「セイレム」に出現した「亜種特異点」を鎮めるべく、再びレイシフトへと身を投じる。\
+				大人気スマホゲーム「Fate/Grand Order」のメインシナリオ第1.5部\
+				「Fate/Grand Order -Epic of Remnant- 亜種特異点IV 禁忌降臨庭園 セイレム 異端なるセイレム」がついにコミカライズ！！ \
+				作画を担当するのは「シルシア=コード」の大森 葵先生！！ 主人公たちはセイレムで起こる数々の惨劇を回避することができるのか――！？ \
+				※本作は月刊ComicREX2019年3月号の雑誌掲載時の内容になります。ページ数は実際と異なる場合がございます。漫画内の告知等は過去のものとなりますので、ご注意ください。",
+				actress_name: "山田花子ですです",
+			},
+			{
+				image: "package4.jpeg",
+				url: "https://book.dmm.com/detail/b508bkaeb00877/",
+				title: "狼は眠らない 01",
+				description: "迷宮の底でみつけた〈黒穴〉に飛び込み、別世界に転移した〈片目狼〉レカン。 \n \
+				元いた世界との違いに戸惑いはしたものの \n \
+				冒険者であるレカンは新転地でも己の進むべき道に迷いはなかった。\n \
+				異世界の迷宮に挑むこと――。\n \
+				強さを求め、ただひたすら迷宮の奥深くへ。\n \
+				孤高の狼・レカンの英雄譚、開幕！",
+				actress_name: "山田花子",
+			},
+			{
+				image: "package5.jpeg",
+				url: "https://book.dmm.com/detail/b163bijt201168/",
+				title: "乙女ゲームの破滅フラグしかない悪役令嬢に転生してしまった… 絶体絶命！破滅寸前編 （1）",
+				description: "光の魔力を持つ優等生・マリアを集団でいびっている最中、前世の記憶を思い出したカタリナ・クラエス公爵令嬢15歳。さらに自身が前世でプレイしていた乙女ゲームの悪役令嬢であることに気づいたカタリナは、待ち受ける破滅フラグを回避するため奮闘を始める。しかし、思い出した時点で破滅まであと1年もない状態の彼女はまさに崖っぷち！ 破滅寸前で大ピンチなカタリナの物語が今、始まる――！",
+				actress_name: "山田花子だわだわ",
+			},
+			{
+				image: "package.jpeg",
+				url: "https://book.dmm.com/detail/b999asqex05557/?i3_ref=list&i3_ord=1&dmmref=listSeries",
+				title: "最近雇ったメイドが怪しい 1巻",
+				description: "【SNSで大反響の‘攻守逆転’ラブコメ♪】\n \
+				最近雇ったメイドが、なんだか怪しい…。こんなに綺麗なメイド見たことないし、コイツの料理はやたらと美味しすぎるのだ！ \n \
+				 大好きな坊ちゃまをからかうメイドと、素直な想いが口に出ちゃう坊ちゃまの、‘攻守逆転’ラブコメディ、第1巻♪ \n \
+				（C）2020 Wakame Konbu \n \
+				\n \
+				【特典画像付き】\n \
+				\n \
+				【付録ファイルについて】\n \
+				・「二日間読める」には付録ファイルは含まれておりません。\n \
+				・付録内容は購入済み商品ページよりご確認ください。\n \
+				・動画、音声、壁紙付録はダウンロードしてお楽しみいただけます。\n \
+				・動画の再生には「DMM Player」が必要です。DMM Playerご利用方法\n \
+				※認証が求められた場合は、DMMアカウントの登録メールアドレスとログインパスワードを入力してください。\n \
+				※ご購入前に動作環境をご確認ください。",
+				actress_name: "山田花子ダラダラ",
+			},
+			{
+				image: "package1.jpeg",
+				url: "https://book.dmm.com/detail/b900okds03240/",
+				title: "転生したらスライムだった件 （1）",
+				description: "WEBで記録的なPVを集めた異世界転生モノの名作を、原作者完全監修でコミカライズ！ \n \
+			巻末には原作者書き下ろしの短編小説を収録した、ファン必携の単行本いよいよ発売！",
+				actress_name: "山田花子",
+			},
+			{
+				image: "package.jpeg",
+				url: "https://book.dmm.com/detail/b900gkds03297/?dmmref=gTop_Deals&i3_ref=recommend&i3_ord=3",
+				title: "はじめの一歩",
+				description: "ひたむき少年、一歩（いっぽ）登場！！ 「強いって、一体どんな気持ちですか？」\
+				 ドジでいじめられっ子の高校生、幕之内（まくのうち）一歩。ボクサー・鷹村（たかむら）との出会いによって、拳（こぶし）にひそむダイナマイトパンチを呼び起こした！ \
+				 プロボクサーへの夢を抱いた一歩は、鴨川（かもがわ）ジムの入門テストに挑戦して……！？ 感動の大ヒット作、ボクシング巨編！！",
+				actress_name: "山田花子",
+
+			},
+			{
+				image: "package1.jpeg",
+				url: "https://book.dmm.com/detail/b900okds03240/?dmmref=gTop_Deals&i3_ref=recommend&i3_ord=2",
+				title: "転生したらスライムだった件 （1）",
+				description: "WEBで記録的なPVを集めた異世界転生モノの名作を、原作者完全監修でコミカライズ！\n \
+						巻末には原作者書き下ろしの短編小説を収録した、ファン必携の単行本いよいよ発売！",
+				actress_name: "山田花子",
+			},
+			{
+				image: "package2.jpeg",
+				url: "https://book.dmm.com/detail/b950ushes09021/?dmmref=gTop_Free&i3_ref=recommend&i3_ord=3",
+				title: "阿波連さんははかれない【期間限定無料】 1",
+				description: "※2021年8月17日までの期間限定無料お試し版です。2021年8月18日以降はご利用できなくなります。\
+				【ジャンプ＋連載中の大人気 低燃費系コメディ！ 『阿波連さんははかれない』TVアニメ化決定記念 大特集！】「小さくて」、「物静か」な阿波連れいなさん。\
+				隣の席に座るライドウくんは、そんな阿波連さんに距離を感じていた。ある日、阿波連さんが落とした消しゴムをライドウくんが拾ったことで、今度は予想外の急接近！？ \n \
+				「遠すぎたり」「近すぎたり」予測不能な阿波連さん。色んな意味で、『はかれない』青春コメディ第1巻！！",
+				actress_name: "山田花子",
+			},
+		];
+		var main = document.createElement('div');
+		main.id = 'main__container';
+		main.style.width = '300px';
+		main.style.height = '250px';
+		main.style.backgroundColor = '#000';
+		main.style.overflow = 'hidden';
+		main.style.display = 'flex';
+		main.style.justifyContent = 'space-around';
+		main.style.transitionDuration = '0.1s';
+		main.style.transitionTimingFunction = 'ease';
+		document.body.appendChild(main);
+
+		var box_div1 = document.createElement("div");
+		box_div1.style.height = "125px";
+		box_div1.style.display = "flex";
+		box_div1.style.flexFlow = "row wrap";
+		main.appendChild(box_div1);
+
+		var merry = document.createElement('div');
+		merry.className = 'center';
+		merry.style.zIndex = '999';
+		merry.style.position = 'absolute';
+		merry.style.width = '300px';
+		merry.style.height = '300px';
+		merry.style.top = '35px';
+		merry.style.textAlign = 'center';
+		main.appendChild(merry);
+
+		var svg = document.getElementsByTagName('svg').item(0);
+		merry.appendChild(svg);
+
+		var path = document.getElementById('Selection');
+		svg.appendChild(path);
+		var box_div2 = document.createElement("div");
+		box_div2.style.height = "125px";
+		box_div2.style.display = "flex";
+		box_div2.style.flexFlow = "row wrap";
+		main.appendChild(box_div2);
+		var class_num = 0;
+		var posNum = '0px';
+		ninja_ad_items.slice(0, 4).forEach((item) => {
+			var animateBox = document.createElement('div');
+			animateBox.className = 'animate' + class_num;
+			animateBox.style.width = "0px";
+			animateBox.style.position = 'absolute';
+			animateBox.style.left = posNum;
+			animateBox.style.top = '8px';
+			animateBox.style.zIndex = '1';
+			box_div1.appendChild(animateBox);
+			switch (class_num) {
+				case (0):
+					posNum = '82px';
+					break;
+				case (1):
+					posNum = '154px';
+					break;
+				case (2):
+					posNum = '226px';
+					break;
+			}
+
+			var jumpUrl = document.createElement("a");
+			jumpUrl.className = "lists" + class_num;
+			jumpUrl.style.height = "125px";
+			jumpUrl.style.textDecoration = "none";
+			jumpUrl.href = unescapeHTML(item.url);
+			jumpUrl.target = "_blank";
+			animateBox.appendChild(jumpUrl);
+			var ind_box = document.createElement('div');
+			ind_box.style.width = '71px';
+			ind_box.style.margin = '0px';
+			ind_box.style.display = 'flex';
+			ind_box.style.flexFlow = "row wrap";
+			jumpUrl.appendChild(ind_box);
+			var top_image = document.createElement('img');
+			top_image.src = item.image;
+			top_image.style.width = "56.2px";
+			top_image.style.height = "81.63px";
+			top_image.style.objectFit = "cover";
+			top_image.className = "image" + class_num;
+			ind_box.appendChild(top_image);
+			var div_textarea = document.createElement('div');
+			div_textarea.style.height = '22px';
+			div_textarea.style.width = '75px';
+			div_textarea.style.bottom = '0';
+			div_textarea.style.left = '0';
+			div_textarea.style.display = 'flex';
+			div_textarea.style.justifyContent = 'center';
+			div_textarea.style.alignItems = 'center';
+			div_textarea.style.zIndex = '-10';
+			div_textarea.style.whiteSpace = 'nowrap';
+			div_textarea.style.overflow = 'hidden';
+			div_textarea.style.textOverflow = 'ellipsis';
+			ind_box.appendChild(div_textarea);
+			var text_p = document.createElement("p");
+			text_p.className = "title" + class_num;
+			text_p.style.marginTop = "10px";
+			text_p.style.marginBottom = "5px";
+			text_p.style.marginRight = "5px";
+			text_p.style.marginLeft = "0px";
+			text_p.style.fontSize = "10px";
+			text_p.style.color = "#4285F4";
+			text_p.style.textOrientation = "upright";
+			text_p.style.maxHeight = "290px";
+			text_p.style.overflowWrap = "break-word";
+			text_p.style.textDecoration = "none";
+			text_p.style.textOverflow = "ellipsis";
+			text_p.style.color = "white";
+			text_p.style.animation = "switch 32s linear infinite";
+			item.actress_name.length > 6 ? text_p.innerHTML = item.actress_name.substring(0, 6) + "..." : text_p.innerHTML = item.actress_name;
+			div_textarea.appendChild(text_p);
+			class_num++;
+		});
+
+
+
+		ninja_ad_items.slice(4, 8).forEach((item) => {
+			var animateBox2 = document.createElement('div');
+			animateBox2.className = 'animate' + class_num;
+			animateBox2.style.width = "75px";
+			animateBox2.style.animationTimingFunction = "linear";
+			animateBox2.style.position = 'absolute';
+			animateBox2.style.left = posNum;
+			animateBox2.style.top = '142px';
+			animateBox2.style.zIndex = '1';
+			box_div2.appendChild(animateBox2);
+			switch (class_num) {
+				case (4):
+					posNum = '10px';
+					break;
+				case (5):
+					posNum = '82px';
+					break;
+				case (6):
+					posNum = '154px';
+					break;
+				case (7):
+					posNum = '226px';
+					break;
+			}
+			var jumpUrl2 = document.createElement("a");
+			jumpUrl2.className = "lists" + class_num;
+			jumpUrl2.style.height = "125px";
+			jumpUrl2.style.textDecoration = "none";
+			jumpUrl2.href = unescapeHTML(item.url);
+			jumpUrl2.target = "_blank";
+			animateBox2.appendChild(jumpUrl2);
+			var ind_box2 = document.createElement('div');
+			ind_box2.style.width = '71px';
+			ind_box2.style.display = 'flex';
+			ind_box2.style.flexFlow = "row wrap";
+			jumpUrl2.appendChild(ind_box2);
+			var bottom_image = document.createElement('img');
+			bottom_image.src = item.image;
+			bottom_image.style.width = "56.2px";
+			bottom_image.style.height = "81.63px";
+			bottom_image.style.objectFit = "cover";
+			bottom_image.className = "image" + class_num;
+			ind_box2.appendChild(bottom_image);
+			var div_textarea = document.createElement('div');
+			div_textarea.style.height = '22px';
+			div_textarea.style.width = '75px';
+			div_textarea.style.bottom = '0';
+			div_textarea.style.left = '0';
+			div_textarea.style.display = 'flex';
+			div_textarea.style.justifyContent = 'center';
+			div_textarea.style.alignItems = 'center';
+			div_textarea.style.zIndex = '-10';
+			div_textarea.style.whiteSpace = 'nowrap';
+			div_textarea.style.overflow = 'hidden';
+			ind_box2.appendChild(div_textarea);
+			var text_p2 = document.createElement("p");
+			text_p2.className = "title" + class_num;
+			text_p2.style.marginTop = "10px";
+			text_p2.style.marginBottom = "5px";
+			text_p2.style.marginRight = "5px";
+			text_p2.style.marginLeft = "0px";
+			text_p2.style.fontSize = "10px";
+			text_p2.style.color = "#4285F4";
+			text_p2.style.textOrientation = "upright";
+			text_p2.style.maxHeight = "290px";
+			text_p2.style.overflowWrap = "break-word";
+			text_p2.style.textDecoration = "none";
+			text_p2.style.textOverflow = "ellipsis";
+			text_p2.style.animation = "switch 32s linear infinite";
+			text_p2.style.color = "white";
+			item.actress_name.length > 6 ? text_p2.innerHTML = item.actress_name.substring(0, 6) + "..." : text_p2.innerHTML = item.actress_name;
+			div_textarea.appendChild(text_p2);
+			class_num++;
+		});
+		//////////// 関数 ////////////
+		function zeroPad(zeroNum) { //ゼロパッド取得関数
+			var zeroNum = ('000' + zeroNum).slice(-3);
+			return zeroNum;
+		}
+
+		function getRandomNum(max, min) { //ランダム値取得関数
+			var ranNum = Math.floor(Math.random() * (max + 1 - min) + min);
+			return ranNum
+		}
+
+		function getRandomFloot(max, min) { //ランダム値取得関数 小数点第1位
+			var ranFlootNum = Math.random() * (max - min) + min;
+			return ranFlootNum;
+		}
+		var showText = function (modify) {
+			modify.animate(
+				[
+					{
+						filter: 'blur(10px)'
+					},
+					{
+						filter: 'blur(5px)'
+					},
+					{
+						filter: 'blur(0px)'
+					}
+				], {
+				duration: 2000,
+				iterations: 1
+			}
+			);
+		}
+		function randomValue(ele) {
+			var multiArray = [1, -1]; //1か-1の配列
+			var randomMulti = multiArray[Math.floor(Math.random() * multiArray.length)]; //1か-1をランダムに取得
+			var maxSize = 9, //最大サイズ
+				minSize = 3, //最小サイズ
+				objSize = getRandomNum(maxSize, minSize), //サイズ 最大〜最小までのランダム値
+				blurValue = getRandomNum(2.5, 0), //ボカシ量
+				opacityValue = getRandomFloot(1, 0.2).toFixed(1), //透明度　※小数点第1位まで取得
+				XSpeedNum = getRandomFloot(3, 0), //Xの移動量
+				YSpeedNum = getRandomFloot(4, 2), //Y座標の移動量
+				ZSpeedNum = getRandomFloot(0.05, 0); //Z座標の移動量
+
+			ele.style.width = objSize + 'px';
+			ele.style.height = objSize + 'px';
+			ele.style.margin = (maxSize - objSize) / 2 + 'px';
+			ele.style.filter = 'blur(' + blurValue + 'px)';
+			ele.style.opacity = opacityValue;
+
+			var YNum = -40;
+			var XNum = 0;
+			var ZNum = 0;
+
+			(function animeLoop() {
+				var requestAnime = window.requestAnimationFrame(animeLoop);
+				XNum += XSpeedNum;
+				YNum += YSpeedNum;
+				ZNum += ZSpeedNum;
+				ele.style.top = YNum + 'px';
+				ele.style.left = XNum * randomMulti + 'px';
+				ele.style.transform = 'scale(' + ZNum + ',' + ZNum + ')';
+
+				if (YNum >= 230 || XNum >= 280) {
+					window.cancelAnimationFrame(requestAnime);
+					return randomValue(ele);
+				}
+			})();
+
+			return ele;
+		}
+
+
+		let state = 0;
+		var show = document.getElementById('text');//.item(0);
+		const step = () => {
+			switch (state) {
+				case 0:
+					showText(show);
+					setTimeout(step, 7000);
+					state++;
+					break;
+			}
+			if (state => 1)
+				state = 0;
+		}
+		setTimeout(step, 1000);
+
+		var pos = document.getElementsByClassName('animate0').item(0);
+		pos.style.left = '10px';
+
+		var winWidth = document.documentElement.clientWidth, //ウィンドウの横幅
+			winHeight = document.documentElement.clientHeight; //ウィンドウの高さ
+
+		var main_div = document.getElementById('main__container');
+
+		for (var i = 1; i <= 50; i++) {
+			var div = document.createElement('div'); //divを作成
+			main_div.appendChild(div); //divを追加
+			div.setAttribute('id', 'contents' + zeroPad(i));
+			div.setAttribute('style', 'position:relative; background-color:#fff; border-radius:50%; top:-30px;');
+			randomValue(div);
+		}
+
+	</script>
+</body>
+
+</html>
