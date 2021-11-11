@@ -121,7 +121,7 @@
 <body>
 	<script>
 
-		var ninja_ad_items = [
+			var ninja_ad_items = [
 			{
 				image: "package.jpeg",
 				url: "https://book.dmm.com/detail/b900gkds03297/?dmmref=gTop_Deals&i3_ref=recommend&i3_ord=3",
@@ -213,7 +213,7 @@
 			inputs.className = 'tab-tfbb';
 			inputs.setAttribute('type', 'radio');
 			inputs.setAttribute('name', 'tabs');
-
+	
 			perspective_div.appendChild(inputs);
 		}
 
@@ -327,8 +327,50 @@
 			}
 		}
 		setTimeout(facetChanger, 1500);
-
-		var checked =
+		
+		
+		var checked1 = document.getElementsByClassName('tab').item(0);
+		var checked2 = document.getElementsByClassName('tab').item(1);
+		var checked3 = document.getElementsByClassName('tab').item(2);
+		var checked4 = document.getElementsByClassName('tab').item(3);
+var cube = document.getElementsByClassName('cube').item(0);
+		
+		checked1.addEventListener(
+			"click",
+			() => {
+				cube.style.transform = 'rotateX(270deg)';
+				
+			},
+			false
+		);
+		
+			checked2.addEventListener(
+			"click",
+			() => {
+				cube.style.transform='rotateX(0deg)';
+				
+			},
+			false
+		);
+		
+			checked3.addEventListener(
+			"click",
+			() => {
+				cube.style.transform = 'rotateX(90deg)';
+				
+			},
+			false
+		);
+		
+			checked4.addEventListener(
+			"click",
+			() => {
+				cube.style.transform='rotateX(180deg)';
+				
+			},
+			false
+		);
+			
 
 	</script>
 </body>
